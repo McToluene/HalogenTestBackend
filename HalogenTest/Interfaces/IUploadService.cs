@@ -8,5 +8,7 @@ namespace HalogenTest.Interfaces
         List<int> Read();
 
         bool Upload(IFormFile formFile);
+
+        string GetFilePath();
     }
 }

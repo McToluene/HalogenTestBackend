@@ -18,6 +18,8 @@ namespace HalogenTest.Services
             _filePath = Path.Combine(savedPath, configuration["FileName"]);
         }
 
+        public string GetFilePath() => _filePath;
+
         public List<int> Read(){
             if (!File.Exists(_filePath)) return null;
 
