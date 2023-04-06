@@ -33,6 +33,7 @@ namespace HalogenTest.Services
                 }
                 else
                     evenNumbers += $" {number},";
+                
                 if (number % 3 == 0)
                     divisibleByThree += $" {number},";
                 if (number % 5 == 0)
