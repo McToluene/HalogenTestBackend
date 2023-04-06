@@ -1,0 +1,12 @@
+<div>
+  <label for="formFile" class="form-label">Upload random numbers</label>
+  <input
+    class="form-control"
+    type="file"
+    id="formFile"
+    #file
+    accept=".csv"
+    (change)="uploadFile($event)"
+    (click)="(file.click)"
+  />
+</div>

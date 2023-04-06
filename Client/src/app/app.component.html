@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <app-download></app-download>
+  </div>
+  <div class="row">
+    <app-upload class="col-4"></app-upload>
+    <app-generate
+      class="col-4 align-self-end"
+      (childToParent)="onResult($event)"
+    ></app-generate>
+  </div>
+  <div class="mt-5">
+    <app-result
+      *ngFor="let result of results"
+      title="{{ result.title }}"
+      data="{{ result.data }}"
+    ></app-result>
+  </div>
+</div>
