@@ -34,9 +34,8 @@ namespace HalogenTest.Services
                 if (line != null) entries = entries.Concat(line).ToArray();
             }
 
-            var numbers = entries.Skip(1).Select(int.Parse)
-                .ToArray()
-                .OrderBy(entry => entry >= 0).ToList();
+            var numbers = entries.Skip(1).Select(int.Parse).ToList();
+            numbers.Sort();
             return numbers;
         }
 
