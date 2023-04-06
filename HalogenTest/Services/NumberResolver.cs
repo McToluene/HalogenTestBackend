@@ -38,7 +38,7 @@ namespace HalogenTest.Services
                         divisibleBySeven += $" {number},";
                 }
                 else
-                    evenNumbers += $" {number}";
+                    evenNumbers += $" {number},";
 
                 total += number;
             }

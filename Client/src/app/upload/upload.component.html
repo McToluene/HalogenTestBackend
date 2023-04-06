@@ -1,12 +1,20 @@
-<div>
-  <label for="formFile" class="form-label">Upload random numbers</label>
-  <input
-    class="form-control"
-    type="file"
-    id="formFile"
-    #file
-    accept=".csv"
-    (change)="uploadFile($event)"
-    (click)="(file.click)"
-  />
+<div class="d-flex">
+  <div class="mr-5">
+    <label for="formFile" class="form-label">Upload random numbers</label>
+    <input
+      class="form-control"
+      type="file"
+      id="formFile"
+      #file
+      accept=".csv"
+      (change)="uploadFile($event)"
+      (click)="(file.click)"
+    />
+  </div>
+  <div class="col-4 align-self-end">
+    <span class="download" *ngIf="progress > 0"> {{ progress }}% </span>
+    <span class="download">
+      {{ message }}
+    </span>
+  </div>
 </div>

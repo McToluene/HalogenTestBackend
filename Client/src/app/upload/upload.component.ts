@@ -23,6 +23,7 @@ export class UploadComponent {
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
     this.makeUploadRequest(formData);
+    element.files = null;
   };
 
   private makeUploadRequest = (formData: FormData) => {
