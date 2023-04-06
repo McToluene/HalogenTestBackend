@@ -20,16 +20,7 @@ namespace HalogenTest
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services){
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                    policy =>
-                    {
-                        policy.WithOrigins("http://localhost:4200")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod();
-                    });
-            });
+            services.AddCors();
             services.AddControllers();
             services.AddTransient<INumberResolver, NumberResolver>()
                 .AddTransient<IUploadService, UploadService>();
@@ -37,7 +28,6 @@ namespace HalogenTest
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env){
-            app.UseCors(MyAllowSpecificOrigins);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -49,7 +39,11 @@ namespace HalogenTest
             }
             
             app.UseRouting();
-            
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -57,4 +51,3 @@ namespace HalogenTest
         }
     }
 }
-
