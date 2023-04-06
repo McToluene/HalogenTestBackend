@@ -30,15 +30,15 @@ namespace HalogenTest.Services
             foreach (var number in numbers){
                 if (number % 2 != 0){
                     oddNumbers += $" {number},";
-                    if (number % 3 == 0)
-                        divisibleByThree += $" {number},";
-                    if (number % 5 == 0)
-                        divisibleByFive += $" {number},";
-                    if (number % 7 == 0)
-                        divisibleBySeven += $" {number},";
                 }
                 else
                     evenNumbers += $" {number},";
+                if (number % 3 == 0)
+                    divisibleByThree += $" {number},";
+                if (number % 5 == 0)
+                    divisibleByFive += $" {number},";
+                if (number % 7 == 0)
+                    divisibleBySeven += $" {number},";
 
                 total += number;
             }
