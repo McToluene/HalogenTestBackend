@@ -28,7 +28,7 @@ export class UploadComponent {
 
   private makeUploadRequest = (formData: FormData) => {
     this.http
-      .post('https://halogen-test.azurewebsites.net/Number/upload', formData, {
+      .post('https://3556-95-210-55-194.eu.ngrok.io/Number/upload', formData, {
         reportProgress: true,
         observe: 'events',
       })

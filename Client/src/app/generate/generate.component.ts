@@ -13,7 +13,7 @@ export class GenerateComponent {
 
   public generateResult = (event: Event) => {
     this.http
-      .get<IResult[]>('https://halogen-test.azurewebsites.net/Number/process')
+      .get<IResult[]>('https://3556-95-210-55-194.eu.ngrok.io/Number/process')
       .subscribe((event) => {
         this.childToParent.emit(event);
       });

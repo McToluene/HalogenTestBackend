@@ -17,7 +17,7 @@ export class DownloadComponent {
 
   download = () => {
     this.http
-      .get('https://halogen-test.azurewebsites.net/Number/download', {
+      .get('https://3556-95-210-55-194.eu.ngrok.io/Number/download', {
         reportProgress: true,
         observe: 'events',
         responseType: 'blob',
