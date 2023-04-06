@@ -17,7 +17,7 @@ export class DownloadComponent {
 
   download = () => {
     this.http
-      .get('http://localhost:5000/Number/download', {
+      .get('https://halogen-test.azurewebsites.net/Number/download', {
         reportProgress: true,
         observe: 'events',
         responseType: 'blob',

@@ -13,7 +13,7 @@ export class GenerateComponent {
 
   public generateResult = (event: Event) => {
     this.http
-      .get<IResult[]>('http://localhost:5000/Number/process')
+      .get<IResult[]>('https://halogen-test.azurewebsites.net/Number/process')
       .subscribe((event) => {
         this.childToParent.emit(event);
       });

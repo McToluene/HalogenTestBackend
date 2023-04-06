@@ -28,7 +28,7 @@ export class UploadComponent {
 
   private makeUploadRequest = (formData: FormData) => {
     this.http
-      .post('http://localhost:5000/Number/upload', formData, {
+      .post('https://halogen-test.azurewebsites.net/Number/upload', formData, {
         reportProgress: true,
         observe: 'events',
       })
